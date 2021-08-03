@@ -347,15 +347,18 @@ class CardProject extends StatelessWidget {
                 offset: Offset(6, 6),
               )
             ]),
-        height: wid > 1200 ? hei * 0.8 : wid * .4,
+        height: wid > 1200 ? hei * 0.8 : wid * .8,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+          padding: EdgeInsets.symmetric(
+              horizontal: wid < 1200 ? 10 : 30, vertical: 30),
           child: WidgetAnimator(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: wid * .1, vertical: 30),
+              padding: EdgeInsets.symmetric(
+                  horizontal: wid > 1200 ? wid * .1 : 30,
+                  vertical: wid < 1200 ? 10 : 30),
               child: CardFrame(
                 cardWidth: wid < 1200 ? wid * .8 : wid * .7,
-                cardHeight: wid < 1200 ? hei * .4 : hei * .2,
+                cardHeight: wid < 1200 ? hei * .8 : hei * .2,
                 backImage: kprojectBanner[index],
                 frameTitle: kprojectTitle[index],
                 frameDescription: kprojectDescription[index],
